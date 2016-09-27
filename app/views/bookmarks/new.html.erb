@@ -1,0 +1,24 @@
+<%= form_for @bookmark do |f|%>
+
+	<p>
+		<%= f.label :title%><br>
+		<%= f.text_field :title%><br>
+	</p>
+	<p>
+		<%= f.label :url%><br>
+		<%= f.text_field :url%><br>
+	</p>
+	<p>
+		<%= f.label :description%><br>
+		<%= f.text_field :description%><br>
+	</p>
+	<p>
+		<%= f.label :favorite%><br>
+		<%= f.check_box :favorite%><br>
+	</p>
+	<p>
+		<%= f.submit %><br>
+	</p>
+<% end %>
+
+<%= link_to 'Back', root_path %>
