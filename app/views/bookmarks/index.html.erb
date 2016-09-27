@@ -1,20 +1,42 @@
-<h1>List of bookmarks</h1>
-<ul>
-	<% @bookmarks.each do |bookmark| %>
-	<li>
-		<%= bookmark.title %>
-		<% if bookmark.favorite %>
-		***
-		<% end %>
-		<br>
-		<%= bookmark.url %><br>
-		<%= link_to 'Show', bookmark_path(bookmark) %><br>
-		<%= link_to 'edit', edit_bookmark_path(bookmark) %><br>
-		<%= link_to 'delete', bookmark_path(bookmark), method: :delete %>
-		<br>
-	</li>
-	<% end %>
+<h2>Your Aweosme Bookmarks List</h2>
+	<div class="row">
+		<% @bookmarks.each do |bookmark| %>
+		<div class="col-md-4 col-sm-6">
+			<div class="bookmark">
+				<div class="bookmark-body">
+					<p class="icons clearfix">
+					<span class="pull-left">
+						<%= link_to edit_bookmark_path(bookmark) do%>
+							<i class="fa fa-pencil" aria-hidden="true"></i>
+						<% end %>
+					</span>
+					<span class="pull-left delete">
+						<%= link_to bookmark_path(bookmark), method: :delete do%>
+							<i class="fa fa-trash-o" aria-hidden="true"></i>
+						<% end %>
+					</span>
+					<span class="pull-right">
+						<% if bookmark.favorite %>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						
+						<% end %>
+					</span>
+					</p>
+					<div class="bookmark_desc">
+					<h3><%= bookmark.title %></h3>
 
-	<%= link_to "New Bookmark", new_bookmark_path %>
-</ul>
+					<p class="description"><%= bookmark.description %> </p>
+					<p><%= link_to bookmark.url, bookmark.url, class: 'urls' %></p>
+					</div>
+					<p class="time">
+						<%= bookmark.created_at.to_s(:long) %>						
+					</p>
+					
+				</div>
+
+			</div>
+		</div>
+		<% end %>
+</div>
+
 
