@@ -2,10 +2,11 @@ class BookmarksController < ApplicationController
 	before_action :find_bookmark, only: [:show, :edit, :update, :destroy]
 	before_action :authenticate_user!
 	def index
-		@bookmarks = Bookmark.all
+		@bookmarks = current_user.bookmarks
 	end
 
 	def show
+
 	end
 
 	def new

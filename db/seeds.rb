@@ -12,21 +12,27 @@
 
 Bookmark.create([
 	{
-		:title => 'Treehouse website',
-		:url => 'https://www.teamtreehouse.com',
-		:description => 'Awesome website to learn',
-		:favorite => true	
+		title: 'Treehouse website',
+		url: 'https://www.teamtreehouse.com',
+		description: 'Awesome website to learn',
+		favorite: true	
 	},
 	{
-		:title => 'Youtube',
-		:url => 'https://www.youtube.com',
-		:description => 'Online video platform to explore and learn'
+		title: 'Youtube',
+		url: 'https://www.youtube.com',
+		description: 'Online video platform to explore and learn'
 	},
 	{
-		:title => 'Facebook',
-		:url => 'https://www.facebook.com',
-		:description => 'Social networking platform'
+		title: 'Facebook',
+		url: 'https://www.facebook.com',
+		description: 'Social networking platform'
+	},
+	{
+		title: 'Facebook',
+		url: 'https://www.facebook.com',
+		description: 'Social networking platform'
 	}
+
 
 ])
 
