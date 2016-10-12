@@ -1,7 +1,9 @@
 <h2>Your Aweosme Bookmarks List</h2>
 <div class="row">
-	<% if @bookmarks.present? %>
-	<% @bookmarks.each do |bookmark| %>
+	
+	<%= will_paginate @books %>
+	<% if @books.present? %>
+	<% @books.each do |bookmark| %>
 	<div class="col-md-4 col-sm-6">
 		<div class="bookmark">
 			<div class="bookmark-body">
@@ -35,7 +37,8 @@
 			</div>
 		</div>
 	</div>
-	<% end %>
+	<% end %><br /><br /> 
+	<%= will_paginate @books %>
 	<% else %>
 	<div class="col-sm-12">
 		<h4> No bookmarks to show</h4>

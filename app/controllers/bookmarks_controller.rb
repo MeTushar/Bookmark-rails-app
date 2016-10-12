@@ -3,14 +3,14 @@ class BookmarksController < ApplicationController
 	before_action :authenticate_user!
 	def index
 		@bookmarks = current_user.bookmarks
+		@books = @bookmarks.paginate(page: params[:page], per_page: 9)
 	end
 
 	def show
-
 	end
 
 	def new
-		@bookmark = current_user.bookmarks.build
+	  	@bookmark = current_user.bookmarks.build
 	end
 
 	def create
